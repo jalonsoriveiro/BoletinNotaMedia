@@ -13,19 +13,22 @@ import javax.swing.JOptionPane;
  */
 public class Calculo {
  
+   private String nombre; 
     
     
-    
-    public void pedirDatos(){
-        float c;
+    public int pedirDatos(){       
         float notaPrimerExamen =Float.parseFloat(JOptionPane.showInputDialog(null,"Nota primer examen"));
             comprobarNumero(notaPrimerExamen);
         float notaSegundoExamen =Float.parseFloat(JOptionPane.showInputDialog("Nota segundo examen"));
             comprobarNumero(notaSegundoExamen);
         float notaTercerExamen =Float.parseFloat(JOptionPane.showInputDialog("Nota Examen practico"));
             comprobarNumero(notaTercerExamen);
-            
-        return (notaPrimerExamen+notaSegundoExamen)/2;
+         
+        float notaMed=(notaPrimerExamen+notaSegundoExamen)/2;
+        int notaFinal;
+        
+        return notaFinal=(int) (notaMed*0.4+notaTercerExamen*0.4+boletinesEntregados());
+        
     
     }
     
@@ -54,4 +57,17 @@ public class Calculo {
             else
                 return 0;          
     }
+    
+    public  void Nombre (){
+                nombre=(JOptionPane.showInputDialog("Nombre?"));
+            while (!"fin".equals(nombre)==false){
+                        nombre=(JOptionPane.showInputDialog("Nombre alumno"));
+                    }
+          
+          System.out.println("Alumno: "+nombre+" Nota final: "+pedirDatos());
+   
+       
+    }
+    
+    
 }
