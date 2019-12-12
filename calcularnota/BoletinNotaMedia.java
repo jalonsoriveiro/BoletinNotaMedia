@@ -21,7 +21,8 @@ public class BoletinNotaMedia {
         
         Calculo obj = new Calculo();
         
-        obj.pedirDatos();
+        obj.Nombre();
+        
     }
     
 }
